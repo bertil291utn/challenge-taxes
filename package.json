@@ -1,0 +1,11 @@
+{
+  "name": "challenge-taxes",
+  "version": "1.0.0",
+  "description": "taxes challenge",
+  "main": "index.js",
+  "author": "Bertil t",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^29.3.1"
+  }
+}
