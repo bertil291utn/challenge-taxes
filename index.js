@@ -7,6 +7,7 @@ const { Detail } = require('./classes/Detail');
 
 //description, price, type, imported
 const details = [];
+//EDIT HERE
 const product1 = new Product('imported bottle of perfume', 27.99, 'beauty', true);
 const detail1 = new Detail(product1, 1);
 details.push(detail1);
@@ -19,6 +20,9 @@ details.push(detail3);
 const product4 = new Product('imported boxes of chocolates', 11.25, 'medicine', true);
 const detail4 = new Detail(product4, 3);
 details.push(detail4);
+
+//UNTIL HERE
+
 
 const receipt= new Receipt(details);
 receipt.getValues();
