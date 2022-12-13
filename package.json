@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "taxes challenge",
   "main": "index.js",
-  "author": "Bertil t",
+  "author": "Bertil T",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "jest": "^29.3.1"
   }
