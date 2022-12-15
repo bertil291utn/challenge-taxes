@@ -20,7 +20,7 @@ class Receipt {
       this.printArr.push({
         ...Detail.Product,
         quantity: Detail.quantity,
-        price: (finalPrice * Detail.quantity).toFixed(2),
+        price: +(finalPrice * Detail.quantity).toFixed(2),
       });
     });
   }
@@ -29,8 +29,8 @@ class Receipt {
     this.printArr.forEach((elem) => {
       console.log(`${elem.quantity} ${elem.description}: ${elem.price}\n`);
     });
-    console.log(`Sales Taxes: ${Math.ceil(this.totalTaxes() * 20) / 20}`);
-    console.log(`Total: ${Math.round(this.total() * 100) / 100}`);
+    console.log(`Sales Taxes: ${this.totalTaxes()}`);
+    console.log(`Total: ${this.total()}`);
   }
 
   total() {
