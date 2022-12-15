@@ -1,23 +1,26 @@
+const { calculateSalesTax } = require('../utils/common');
+
 class Receipt {
   totalApplicableTaxes = [];
   printArr = [];
 
   constructor(_detailArr) {
-    this.products = _detailArr;
+    this.details = _detailArr;
   }
 
   getValues() {
-    if (this.products?.length === 0) return;
-    this.products.forEach((Detail) => {
-      let priceAug = Detail.getPVPPrice();
-      priceAug += Detail.getPVPPrice() * Detail.getTax();
-      this.totalApplicableTaxes.push(Detail.getPVPPrice() * Detail.getTax());
+    if (this.details?.length === 0) return;
+    this.details.forEach((Detail) => {
+      const { finalPrice, taxAmount } = calculateSalesTax(
+        Detail.Product.price,
+        Detail.getTax()
+      );
+      this.totalApplicableTaxes.push(taxAmount * Detail.quantity);
 
-      priceAug = Math.round(priceAug * 100) / 100;
       this.printArr.push({
         ...Detail.Product,
         quantity: Detail.quantity,
-        price: priceAug,
+        price: (finalPrice * Detail.quantity).toFixed(2),
       });
     });
   }

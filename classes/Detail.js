@@ -6,18 +6,13 @@ class Detail {
     this.Product = Product;
   }
 
-
-  getPVPPrice() {
-    return this.Product.price * this.quantity;
-  }
-
   getTax() {
     let tax = 0;
     if (!this._typeArr.includes(this.Product.type)) {
-      tax = 0.1;
+      tax = 10;
     }
     if (this.Product.isImported) {
-      tax += 0.05;
+      tax += 5;
     }
     return tax;
   }

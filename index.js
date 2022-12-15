@@ -17,7 +17,7 @@ details.push(detail2);
 const product3 = new Product('packet of headache pills', 9.75, 'medicine', false);
 const detail3 = new Detail(product3, 1);
 details.push(detail3);
-const product4 = new Product('imported boxes of chocolates', 11.25, 'medicine', true);
+const product4 = new Product('imported boxes of chocolates', 11.25, 'food', true);
 const detail4 = new Detail(product4, 3);
 details.push(detail4);
 
